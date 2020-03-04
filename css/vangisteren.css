@@ -1,0 +1,529 @@
+/* Typography                      */
+/* ------------------------------- */
+h2, h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 70px; 
+}
+
+p {
+  font-family: 'Pontano Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.65em;
+  color: rgb(8, 41, 58);
+}
+
+h2, h3, h4  { font-family: 'Copse'; }
+li, p { font-family: 'Bitter'; font-size: 15px;}
+
+li {
+  list-style: none;
+}
+
+article h1 {
+  font-family: 'Copse';
+  font-size: 44px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(8, 41, 58);
+}
+
+/* Header                          */
+/* ------------------------------- */
+
+#menu-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px; /* --header-height */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  background-color: white;
+  display: flex;
+  z-index: 9;
+}
+
+#menu-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+
+  max-width: 1024px; /* --content-width */
+  margin: auto auto;
+  padding: 0 2%; /* --content-padding */
+
+  width: 1024px;
+  flex: 0 1 auto;
+}
+
+#logo {
+  display: block;
+  background: url(/images/logo.png) center center no-repeat;
+  background-size: contain;
+  width: 210px;
+  height: 70px;
+}
+
+#site {
+  margin-top: 70px; /* --header-height */
+}
+
+.menu-open  {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Menu                            */
+/* ------------------------------- */
+
+#menu a {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: black;
+  text-transform: uppercase;
+}
+
+#menu.open {
+  display: flex;
+}
+
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+#menu.open {
+  animation-name: fade-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+#menu-main li {
+  float: left;
+  margin-right: 30px;
+  list-style: none;
+  color: red;
+}
+
+#menu li:last-child {
+  margin-right: 0px;
+}
+
+#menu li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+#menu-social {
+  margin-top: 1px;
+}
+
+#menu-social li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#menu-social li a {
+  color: rgb(145, 145, 145);
+}
+
+@media (max-width: 768px) {
+
+  #menu {
+    position: absolute;
+    top: 70px; /* --header-height */
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: calc(100vh - 70px); /* --header-height */
+    
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: white;
+  }
+
+  #menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu li {
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+
+  #menu li:last-child {
+    margin-right: 0;
+  }
+
+  #menu ul#menu-social {
+    display: block;
+  }
+}
+
+/* Content                         */
+/* ------------------------------- */
+.content { 
+  max-width: 1024px; /* --content-width */
+  margin: auto auto;
+  padding: 0 2%; /* --content-padding */
+  overflow: hidden;
+}
+
+/* Home                            */
+/* ------------------------------- */
+
+#homepage-splash {
+  margin-bottom: 30px;
+}
+
+#overview-posts-container {
+  background-color: rgb(244, 241, 240);
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+#homepage-splash-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+#homepage-splash-intro p{
+  font-size: 24px;
+}
+
+#overview-posts li {
+  list-style: none;
+  float: left;
+  width: 32%;
+  height: 380px;
+  margin-right: 2%;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+#overview-posts li:nth-child(3n) {
+  margin-right: 0;
+}
+
+#overview-posts li a {
+  display: block;
+  text-decoration: none;
+}
+
+#overview-posts h3 {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  color: white;
+}
+
+.overview-post-intro {
+  padding: 15px;
+}
+
+.overview-post-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 200px;
+}
+
+.overview-post-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+56,0.65+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+@media (max-width: 768px) {
+
+  #overview-posts li {
+    margin-right: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  #overview-posts-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* BlockQuote                      */
+/* ------------------------------- */
+
+.dark {
+  background-color: rgb(255, 224, 217);
+  padding: 50px;
+}
+
+blockquote {
+  display:block;
+  padding: 25px 20px 25px 45px;
+  position: relative;
+  margin: auto auto;
+  max-width: 700px;
+
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.2;
+  color: #666;
+  text-align: center;
+}
+
+blockquote::before {
+  content: "\201C"; /*Unicode for Left Double Quote*/
+
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+blockquote::after {
+  /*Reset to make sure*/
+  content: "";
+}
+
+blockquote a {
+  text-decoration: none;
+}
+
+blockquote em {
+  font-style: italic;
+}
+
+/* Article                         */
+/* ------------------------------- */
+
+article {
+}
+
+#article-header {
+  background-size: cover;
+  background-position: center center;
+  height: 400px;
+}
+
+article section {
+  padding: 10px 2% 10px 2%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 850px;
+  margin: auto auto;
+}
+
+article h1 {
+  margin: 40px auto;
+  text-align: center;
+}
+
+article p {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+article h1.intro + p {
+  font-size: 24px;
+}
+
+article h2.image-text + p img {
+  display: inline;
+  float: right;
+  margin: 20px;
+
+}
+
+article p img,
+article p img + em {
+  max-width: 90%;
+  margin: auto auto;
+  display: block;
+}
+
+article p img + em {
+  font-size: 16px;
+}
+
+article blockquote:before {
+  content:"";
+}
+
+article blockquote {
+  padding: 0;
+  margin: 0;
+  float: right;
+  max-width: 300px;
+  text-align: left;
+  padding-left: 20px;
+  border-left: 5px solid black;
+  left: 50px;
+}
+
+article blockquote,
+article blockquote p {
+  color: #a60000;
+  font-style: normal;
+  margin-bottom: 5px;
+}
+
+section.related {
+  overflow: auto;
+  padding: 2% 0%;
+  background-color: rgb(244, 241, 240);
+}
+
+section.related .related-container {
+  max-width: 1024px;
+  margin: auto auto;
+  overflow: auto;
+}
+
+.related-post > div > div {
+  background-size: cover;
+  background-position: center center;
+  height: 150px;
+}
+
+.related-post:nth-child(2n) {
+  margin-right: 0;
+}
+
+.related-post {
+  display: block;
+  width: 49%;
+  height: 330px;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  float: left;
+  text-decoration: none;
+  color: rgb(8, 41, 58);
+}
+
+.related-post p {
+  font-size: 16px;
+}
+
+.related-post h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+div.related-post-content {
+  padding: 15px;
+}
+
+article ul {
+  margin-bottom: 30px;
+}
+
+article li {
+  font-size: 16px;
+  font-style: italic;
+}
+
+article a {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  
+  article blockquote {
+    display: block;
+    float: none;
+    width: 80%;
+    max-width: none;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .related-container {
+    overflow: auto;
+  }
+
+  section.related {
+    padding: 0;
+  }
+  
+  .related-post > div > div {
+    margin-bottom: 20px;
+  }
+  
+  .related-post {
+    float: none;
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  .related-post,
+  .related-post:nth-child(2n) {
+    margin: auto auto;
+  }
+}
+
+/* Work                            */
+/* ------------------------------- */
+#overview-posts-container.work {
+  padding: 50px 0;
+}
+
+/* Footer                          */
+/* ------------------------------- */
+footer {
+  background-color: rgb(30, 30, 30);
+  padding: 10px;
+}
+
+footer ul {
+  overflow: auto;
+  text-align: center;
+}
+
+footer li {
+  display: inline;
+}
+
+footer li a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+}

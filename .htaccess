@@ -1,0 +1,52 @@
+# Make sure we compress the output.
+#php_value output_handler ob_gzhandler
+#php_value memory_limit 256M
+
+# Performance 
+FileEtag none
+
+## EXPIRES CACHING ##
+#<IfModule mod_expires.c>
+Header unset Last-Modified
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+
+
+ExpiresDefault "access plus 1 years"
+#</IfModule>
+## EXPIRES CACHING ##
+
+# Redirect
+RewriteEngine on
+
+RewriteCond %{SCRIPT_FILENAME} !favicon.ico$
+RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteCond %{SCRIPT_FILENAME} !-d 
+RewriteCond %{REQUEST_URI} !\/inc/index\.php$
+RewriteRule ^(.*)$ /index.php?path=$1	[L,QSA]
+
+
+# BEGIN REQUIRED FOR WEBFONTS
+
+AddType font/ttf .ttf
+AddType font/eot .eot
+AddType font/otf .otf
+AddType font/woff .woff
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+
+# END REQUIRED FOR WEBFONTS
